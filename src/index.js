@@ -1,4 +1,4 @@
-import "./main.scss";
 import "normalize.css";
+import "/sass/main.scss";
 
-console.log("Hello!");
+// console.log("Hello!");

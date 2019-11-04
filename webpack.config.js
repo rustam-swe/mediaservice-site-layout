@@ -6,6 +6,8 @@ const devserver = require("./webpack/devserver");
 const sass = require("./webpack/sass");
 const css = require("./webpack/css");
 const extractCss = require("./webpack/css.extract");
+const fonts = require("./webpack/fonts");
+const images = require("./webpack/images");
 
 const PATHS = {
   sourse: path.join(__dirname, "./src"),
@@ -26,7 +28,9 @@ const common = merge([
       })
     ]
   },
-  pug()
+  pug(),
+  fonts(),
+  images()
 ]);
 
 module.exports = function(env) {
