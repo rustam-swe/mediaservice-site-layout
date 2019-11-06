@@ -2,6 +2,8 @@ const gulp = require("gulp");
 const browsersync = require("browser-sync").create();
 const gulpSass = require("gulp-sass");
 const gulpPug = require("gulp-pug");
+const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
 const del = require("del");
 
 // BrowserSync
@@ -37,9 +39,19 @@ function pug() {
     .pipe(browsersync.stream());
 }
 
+function css() {
+  return gulp
+    .src("src/styles/*.css")
+    .pipe(sourcemaps.init())
+    .pipe(postcss([require('precss'), require('autoprefixer')]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest("dist/css/"))
+    .pipe(browsersync.stream());
+}
+
 function sass() {
   return gulp
-    .src("src/sass/main.scss")
+    .src("src/sass/*.scss")
     .pipe(gulpSass())
     .pipe(gulp.dest("dist/css/"))
     .pipe(browsersync.stream());
@@ -54,21 +66,26 @@ function scripts() {
 
 function assets() {
   return gulp
-    .src("src/assets/*")
+    .src("src/assets/**/*")
     .pipe(gulp.dest("dist/assets/"))
     .pipe(browsersync.stream());
 }
 
 function watchFiles() {
-  gulp.watch("src/sass/*", sass);
   gulp.watch("src/layouts/*", pug);
+  gulp.watch("src/styles/*", css);
+  gulp.watch("src/sass/*", sass);
+  gulp.watch("src/assets/*", assets);
+  gulp.watch("src/scripts/*", scripts);
   gulp.series(browserSyncReload);
 }
+
 gulp.task("pug", pug);
+gulp.task("css", css);
 gulp.task("sass", sass);
 gulp.task("assets", assets);
 gulp.task("scripts", scripts);
 
-gulp.task("default", gulp.parallel(clean, pug, sass, scripts, assets));
+gulp.task("default", gulp.series(clean, pug, css, sass, scripts, assets));
 
-gulp.task("watch", gulp.parallel(watchFiles, browserSync));
+gulp.task("dev", gulp.parallel(watchFiles, browserSync));

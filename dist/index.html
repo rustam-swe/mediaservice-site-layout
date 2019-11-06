@@ -1,12 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Медиасервис</title>
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/main.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <h1>Hello world</h1>
+    <header class="header">
+      <div class="header__container container">
+        <div class="header__left-side"><img class="logo" src="./assets/img/logo.svg"/>
+          <nav class="nav">
+            <ul class="nav__menu list">
+              <li class="nav__item"><a class="nav__link link" href="#">О компании</a></li>
+              <li class="nav__item"><a class="nav__link link" href="#">Портфолио</a></li>
+              <li class="nav__item"><a class="nav__link link" href="#">Контакты</a></li>
+              <li class="nav__item"><a class="nav__link link" href="#">Услуги</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__right-side">
+          <button class="btn call-back">заказать звонок</button>
+          <address class="header__contacts main-contacts"><a class="link link_tel" href="tel:+79261118544"><i class="icon icon_tel"></i>
+              +7(926) 111 85 44</a><a class="link" href="mailto:mediaserviceprojects@mail.ru"><i class="icon icon_mail"></i>
+              mediaserviceprojects@mail.ru</a></address>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section banner">
+        <div class="banner">Banner</div>
+      </section>
+      <section class="section our-clients">
+        <div class="container">
+          <ul class="our-clients__list list">
+            <li class="our-clients__client"><img class="our-clients__thumb" src="./assets/img/client--kia.png" alt=""/></li>
+            <li class="our-clients__client"><img class="our-clients__thumb" src="./assets/img/client--kia.png" alt=""/></li>
+            <li class="our-clients__client"><img class="our-clients__thumb" src="./assets/img/client--kia.png" alt=""/></li>
+            <li class="our-clients__client"><img class="our-clients__thumb" src="./assets/img/client--kia.png" alt=""/></li>
+            <li class="our-clients__client"><img class="our-clients__thumb" src="./assets/img/client--kia.png" alt=""/></li>
+            <li class="our-clients__client"><img class="our-clients__thumb" src="./assets/img/client--kia.png" alt=""/></li>
+          </ul>
+        </div>
+      </section>
+      <section class="section info-graphics">
+        <header class="section__header">
+          <h1 class="section__title">Добро пожаловать в рекламно-производственную компанию Медиа Сервис. Компания основана в 2005 году.</h1>
+        </header>
+        <div class="info-block">Info-block</div>
+      </section>
+      <section class="section contact-form">
+        <div class="contact-form__container container">
+          <header class="section__header"> 
+            <h1 class="section__title">Добро пожаловать в рекламно-производственную компанию Медиа Сервис.</h1>
+            <h3 class="section__subtitle">Компания основана в 2005 году.</h3>
+          </header><a class="tel_big link" href="tel:+79261118544"><i class="icon icon_tel-alt"></i>+7(926) 111 85 44</a>
+          <div class="form-wrapper">
+            <form class="form">
+              <input class="form__input" type="text" placeholder="Введите свой номер тел."/>
+              <input class="form__input" type="text" placeholder="Ваше имя"/>
+              <input class="form__input" type="text" placeholder="Ваш Email"/>
+              <button class="form__btn btn" type="submit">Отправить заявку</button>
+              <div class="form__disclaimer">Нажав кнопку отправить вы даете согласие на обработку персональных данных</div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="section portfolio"> 
+        <header class="section__header">
+          <h1 class="section__title">Портфолио</h1>
+        </header>
+        <div class="slider slider_portfolio">Slider</div>
+      </section>
+      <section class="section services">
+        <header class="section__header">
+          <h1 class="section__title">Наши услуги</h1>
+        </header>
+        <div class="services-container container">
+          <ul class="services__grid list">
+            <li class="services__service"><img src="./assets/img/services--service-1.jpg" alt=""/>
+              <div class="services__caption">Объемные буквы</div>
+            </li>
+            <li class="services__service"><img src="./assets/img/services--service-2.jpg" alt=""/>
+              <div class="services__caption">Бугущие строки</div>
+            </li>
+            <li class="services__service"><img src="./assets/img/services--service-3.jpg" alt=""/>
+              <div class="services__caption">Рекламные щиты</div>
+            </li>
+            <li class="services__service"><img src="./assets/img/services--service-1.jpg" alt=""/>
+              <div class="services__caption">Объемные буквы</div>
+            </li>
+            <li class="services__service"><img src="./assets/img/services--service-2.jpg" alt=""/>
+              <div class="services__caption">Бугущие строки</div>
+            </li>
+            <li class="services__service"><img src="./assets/img/services--service-3.jpg" alt=""/>
+              <div class="services__caption">Рекламные щиты</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section contacts">
+        <div class="contacts">
+          <div class="contacts__block">
+            <div class="contacts__logo"><img class="logo" src="./assets/img/logo.svg" alt="media service"/></div>
+            <div class="contacts__title">Контакты</div>
+            <address class="main-contacts main-contacts_accent"><a class="link tel" href="tel:+79261118544"><i class="icon icon_tel"></i>
+                +7(926) 111 85 44</a><a class="link" href="mailto:mediaserviceprojects@mail.ru"><i class="icon icon_mail"></i>
+                mediaserviceprojects@mail.ru</a><b>Наш адрес:</b>Москва, Проспект Мира 101 В стр. 2 офис 322</address>
+          </div>
+        </div>
+        <div class="map"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container container">
+        <div class="row">
+          <div class="col-4"><a class="link" href="#"></a></div>
+          <div class="col-4">
+            <div class="copyright">Copyright 2019 Медиа Сервис<br/>Все права защищен</div>
+          </div>
+          <div class="col-4">
+            Сайт разработан студией
+             <a class="link" href="#">IS ART</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

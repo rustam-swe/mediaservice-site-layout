@@ -1,0 +1,110 @@
+// Конфигурации
+
+// Переменные
+$primary-color: #333;
+$secondary-color: #fff;
+$accent-color: #00c0ff;
+$menu-links-color: #252525;
+
+$main-font: OpenSans-Regular;
+$bold-font: OpenSans-Bold;
+
+$shadow: 0px 0px 4px rgba(0, 0, 0, 0.25),
+0px 0px 4px rgba(0, 0, 0, 0.25);
+
+$gradient: linear-gradient(90deg, #00c0ff 9.91%, #026687 100.04%),
+linear-gradient(90deg, #00d7cf 0.01%, #00c0ff 100.04%),
+#00c0ff;
+
+%flexCenterXY {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexCenterX {
+  display: flex;
+  justify-content: center;
+}
+
+%flexCenterY {
+  display: flex;
+  align-items: center;
+}
+
+:root {
+  color: $primary-color;
+  font-size: 14px;
+  font-family: $main-font;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+*,
+h1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  // Исправляет баги флекс боксов (slick.js)
+  min-width: 0;
+  min-height: 0;
+}
+
+// Медиа запросы
+@mixin mediaXl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mediaLg-Max {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+// Для шапки
+@mixin mediaMd-Max {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaSm-Max {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mediaXs {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin media-Max-600 {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin media-MinMax-600-767 {
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+    @content;
+  }
+}

@@ -1,6 +1,11 @@
-body {
-  background-color: green;
-  h1 {
-    font-size: 45px;
-  }
-}
+@charset 'utf-8';
+
+@import "config";
+@import "fonts";
+@import "slick";
+@import "slick-theme";
+@import "blocks";
+@import "header";
+@import "sections";
+@import "footer";
+@import "media";

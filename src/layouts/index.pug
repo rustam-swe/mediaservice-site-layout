@@ -1,11 +1,155 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Медиасервис
+    link(href='/css/normalize.css', rel='stylesheet' type='text/css')
+    link(href='/css/bootstrap-grid.min.css', rel='stylesheet' type='text/css')
+    link(href='/css/main.css', rel='stylesheet' type='text/css')
   body
-    h1 Hello world
+    header.header
+      .header__container.container
+        .header__left-side
+          img.logo(src="./assets/img/logo.svg")
+          nav.nav
+            ul.nav__menu.list
+              li.nav__item
+                a.nav__link.link(href="#") О компании
+              li.nav__item
+                a.nav__link.link(href="#") Портфолио
+              li.nav__item
+                a.nav__link.link(href="#") Контакты
+              li.nav__item
+                a.nav__link.link(href="#") Услуги
+        .header__right-side
+          button.btn.call-back заказать звонок
+          address.header__contacts.main-contacts
 
+            a.link.link_tel(href="tel:+79261118544")
+              i.icon.icon_tel
+              |
+              | +7(926) 111 85 44
+
+            a.link(href="mailto:mediaserviceprojects@mail.ru")
+              i.icon.icon_mail
+              |
+              | mediaserviceprojects@mail.ru
+    
+    main.main
+      section.section.banner
+        .banner Banner
+
+      section.section.our-clients
+        .container
+          ul.our-clients__list.list
+            li.our-clients__client
+              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+            li.our-clients__client
+              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+            li.our-clients__client
+              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+            li.our-clients__client
+              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+            li.our-clients__client
+              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+            li.our-clients__client
+              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+          
+      section.section.info-graphics
+        header.section__header
+          h1.section__title Добро пожаловать в рекламно-производственную компанию Медиа Сервис. Компания основана в 2005 году.
+
+        .info-block Info-block
+
+      section.section.contact-form
+        .contact-form__container.container
+          header.section__header  
+            h1.section__title Добро пожаловать в рекламно-производственную компанию Медиа Сервис.
+            h3.section__subtitle Компания основана в 2005 году.
+
+          a.tel_big.link(href="tel:+79261118544")
+            i.icon.icon_tel-alt
+            |+7(926) 111 85 44
+          
+          .form-wrapper
+            form.form
+              input.form__input(type="text" placeholder='Введите свой номер тел.')
+              input.form__input(type="text" placeholder='Ваше имя')
+              input.form__input(type="text" placeholder='Ваш Email')
+              button.form__btn.btn(type="submit") Отправить заявку
+              .form__disclaimer Нажав кнопку отправить вы даете согласие на обработку персональных данных
+
+      section.section.portfolio 
+        header.section__header
+          h1.section__title Портфолио
+
+        .slider.slider_portfolio Slider
+      
+      section.section.services
+        header.section__header
+          h1.section__title Наши услуги
+
+        .services-container.container
+          ul.services__grid.list
+            li.services__service
+              img(src="./assets/img/services--service-1.jpg", alt="")
+              .services__caption Объемные буквы
+            li.services__service
+              img(src="./assets/img/services--service-2.jpg", alt="")
+              .services__caption Бугущие строки
+            li.services__service
+              img(src="./assets/img/services--service-3.jpg", alt="")
+              .services__caption Рекламные щиты
+            li.services__service
+              img(src="./assets/img/services--service-1.jpg", alt="")
+              .services__caption Объемные буквы
+            li.services__service
+              img(src="./assets/img/services--service-2.jpg", alt="")
+              .services__caption Бугущие строки
+            li.services__service
+              img(src="./assets/img/services--service-3.jpg", alt="")
+              .services__caption Рекламные щиты
+    
+      section.section.contacts
+        .contacts
+          .contacts__block
+            .contacts__logo
+              img.logo(src="./assets/img/logo.svg", alt="media service")
+            .contacts__title Контакты
+            address.main-contacts.main-contacts_accent
+
+              a.link.tel(href="tel:+79261118544")
+                i.icon.icon_tel
+                |
+                | +7(926) 111 85 44
+
+              a.link(href="mailto:mediaserviceprojects@mail.ru")
+                i.icon.icon_mail
+                |
+                | mediaserviceprojects@mail.ru
+
+              b Наш адрес:
+              | Москва, Проспект Мира 101 В стр. 2 офис 322
+
+        .map
+    
+    footer.footer
+      .footer-container.container
+        .row
+          .col-4
+            a.link(href="#")
+          .col-4
+            .copyright Copyright 2019 Медиа Сервис
+              br 
+              | Все права защищен
+          .col-4
+            | Сайт разработан студией
+            | 
+            a.link(href="#") IS ART
+
+
+           
+    //- script(src='/js/main.js')
   

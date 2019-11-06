@@ -1,0 +1,21 @@
+.header {
+  &__container {
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-side,
+  &__right-side {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav {
+  margin-left: 35px;
+}
+
+button + address {
+  margin-left: 50px;
+}

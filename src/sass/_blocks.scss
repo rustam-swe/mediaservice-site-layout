@@ -1,0 +1,123 @@
+/*body {
+  &>* {
+    border: 1px double red;
+
+    &>* {
+      border: 1px dashed green;
+
+      &>* {
+        border: 1px solid blueviolet;
+      }
+    }
+  }
+}*/
+// Common blocks
+.logo {
+  width: 262px;
+  height: 39px;
+}
+
+.main-contacts {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+
+  .link {
+    justify-content: space-between;
+
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+
+  .icon {
+    margin-right: 10px;
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  @extend %flexCenterY;
+  color: $primary-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &_underlined {
+    text-decoration: underline;
+  }
+
+  &_tel {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+  }
+}
+
+.btn {
+  @extend %flexCenterXY;
+  height: 40px;
+  padding: 0 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  background: $gradient;
+  box-shadow: $shadow;
+  border: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &_tel {
+    background-image: url(../assets/img/icons/icon--tel.svg);
+
+    &-alt {
+      width: 45px;
+      height: 45px;
+      background-image: url(../assets/img/icons/icon--tel-alt.svg);
+    }
+  }
+
+  &_mail {
+    background-image: url(../assets/img/icons/icon--mail.svg);
+  }
+}
+
+.tel_big {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 65px;
+
+  .icon {
+    margin-right: 20px;
+  }
+}
+
+.nav {
+  &__menu {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &__link {
+    color: $menu-links-color;
+  }
+}
