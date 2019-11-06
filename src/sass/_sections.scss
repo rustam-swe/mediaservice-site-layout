@@ -98,13 +98,13 @@
 .form {
   &__input {
     width: 100%;
-    color: #fff;
+    color: $secondary-color;
     font-weight: normal;
     font-size: 18px;
     line-height: 25px;
     background: transparent;
     border: transparent;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $secondary-color;
 
     &:not(:first-child) {
       margin-top: 30px
@@ -118,7 +118,7 @@
 
   &__disclaimer {
     margin-top: 10px;
-    color: #fff;
+    color: $secondary-color;
     font-weight: normal;
     font-size: 10px;
     line-height: 14px;
@@ -145,5 +145,37 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
+  }
+
+  &__service {
+    position: relative;
+  }
+
+  &__thumb {
+    position: relative;
+    width: 360px;
+    height: 232px;
+    max-width: calc(100% - 10px);
+    max-height: calc(100% - 10px);
+    background: linear-gradient(90deg, #00C0FF 9.91%, #026687 100.04%), linear-gradient(90deg, rgba(0, 215, 207, 0.5) 0.01%, rgba(0, 192, 255, 0.5) 100.04%);
+  }
+
+  &__img {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 2px solid $secondary-color;
+  }
+
+  &__caption {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    color: $secondary-color;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
   }
 }

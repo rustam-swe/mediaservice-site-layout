@@ -415,6 +415,34 @@ button + address {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px; }
 
+.services__service {
+  position: relative; }
+
+.services__thumb {
+  position: relative;
+  width: 360px;
+  height: 232px;
+  max-width: calc(100% - 10px);
+  max-height: calc(100% - 10px);
+  background: linear-gradient(90deg, #00C0FF 9.91%, #026687 100.04%), linear-gradient(90deg, rgba(0, 215, 207, 0.5) 0.01%, rgba(0, 192, 255, 0.5) 100.04%); }
+
+.services__img {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border: 2px solid #fff; }
+
+.services__caption {
+  position: absolute;
+  left: 30px;
+  bottom: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px; }
+
 @media screen and (min-width: 1200px) {
   .subscription__input {
     flex-grow: 1;
