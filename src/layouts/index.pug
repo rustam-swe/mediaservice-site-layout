@@ -27,12 +27,12 @@ html(lang="ru")
           button.btn.call-back заказать звонок
           address.header__contacts.main-contacts
 
-            a.link.link_tel(href="tel:+79261118544")
+            a.main-contacts__tel.link(href="tel:+79261118544")
               i.icon.icon_tel
               |
               | +7(926) 111 85 44
 
-            a.link(href="mailto:mediaserviceprojects@mail.ru")
+            a.main-contacts__mail.link(href="mailto:mediaserviceprojects@mail.ru")
               i.icon.icon_mail
               |
               | mediaserviceprojects@mail.ru
@@ -118,7 +118,7 @@ html(lang="ru")
                 img.services__img(src="./assets/img/services--service-3.jpg", alt="")
               .services__caption Рекламные щиты
     
-      section.section.contacts
+      section.section.contacts-section
         .contacts
           .contacts__block
             .contacts__logo
@@ -126,34 +126,40 @@ html(lang="ru")
             .contacts__title Контакты
             address.main-contacts.main-contacts_accent
 
-              a.link.tel(href="tel:+79261118544")
+              a.main-contacts__tel.link(href="tel:+79261118544")
                 i.icon.icon_tel
                 |
                 | +7(926) 111 85 44
 
-              a.link(href="mailto:mediaserviceprojects@mail.ru")
+              a.main-contacts__tel.link(href="tel:+79269180019")
+                i.icon.icon_tel
+                |
+                | +7(926) 918 00 19
+
+              a.main-contacts__mail.link(href="mailto:mediaserviceprojects@mail.ru")
                 i.icon.icon_mail
                 |
                 | mediaserviceprojects@mail.ru
 
-              b Наш адрес:
-              | Москва, Проспект Мира 101 В стр. 2 офис 322
+              .main-contacts__address
+                b.main-contacts__address-title Наш адрес:
+                | Москва, Проспект Мира 101 В стр. 2 офис 322
 
         .map
     
     footer.footer
       .footer-container.container
         .row
-          .col-4
-            a.link(href="#")
-          .col-4
+          .footer__col.col-4
+            a.link(href="#") Политика конфеденциальности
+          .footer__col.col-4
             .copyright Copyright 2019 Медиа Сервис
               br 
               | Все права защищен
-          .col-4
+          .footer__col.col-4
             | Сайт разработан студией
             | 
-            a.link(href="#") IS ART
+            a.footer__link.link(href="#") IS ART
 
 
            

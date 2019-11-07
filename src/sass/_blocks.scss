@@ -23,7 +23,7 @@
   font-style: normal;
 
   .link {
-    justify-content: space-between;
+    // justify-content: space-between;
 
     &:not(:first-child) {
       margin-top: 5px;
@@ -32,6 +32,21 @@
 
   .icon {
     margin-right: 10px;
+  }
+
+  &__tel {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  &__address {
+    margin-top: 10px;
+    line-height: 19px;
+
+    &-title {
+      display: block;
+    }
   }
 }
 
@@ -48,12 +63,6 @@
 
   &_underlined {
     text-decoration: underline;
-  }
-
-  &_tel {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
   }
 }
 

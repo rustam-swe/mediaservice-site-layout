@@ -179,3 +179,56 @@
     line-height: 33px;
   }
 }
+
+// Контакты и карта
+.contacts-section {
+  position: relative;
+  width: 100%; // 1362px;
+  height: 351px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.contacts {
+  @extend %flexCenterY;
+  justify-content: flex-end;
+
+  position: absolute;
+  width: 390px;
+  height: 100%;
+  padding-right: 20px;
+  background: linear-gradient(90deg, #00C0FF 9.91%, #026687 100.04%), linear-gradient(90deg, #00D7CF 0.01%, #00C0FF 100.04%), linear-gradient(0deg, rgba(131, 222, 217, 0.9), rgba(131, 222, 217, 0.9));
+
+  * {
+    color: $accent-color;
+  }
+
+  &__block {
+    width: 321px;
+    height: 313px;
+    padding: 25px 30px;
+    background-color: #fff;
+    box-shadow: $shadow;
+    border-radius: 8px;
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    text-transform: uppercase;
+  }
+
+  .main-contacts {
+    margin-top: 10px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 350px;
+  background: url(../assets/img/map--bg.jpg) no-repeat;
+  background-position: center right;
+}

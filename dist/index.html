@@ -24,8 +24,8 @@
         </div>
         <div class="header__right-side">
           <button class="btn call-back">заказать звонок</button>
-          <address class="header__contacts main-contacts"><a class="link link_tel" href="tel:+79261118544"><i class="icon icon_tel"></i>
-              +7(926) 111 85 44</a><a class="link" href="mailto:mediaserviceprojects@mail.ru"><i class="icon icon_mail"></i>
+          <address class="header__contacts main-contacts"><a class="main-contacts__tel link" href="tel:+79261118544"><i class="icon icon_tel"></i>
+              +7(926) 111 85 44</a><a class="main-contacts__mail link" href="mailto:mediaserviceprojects@mail.ru"><i class="icon icon_mail"></i>
               mediaserviceprojects@mail.ru</a></address>
         </div>
       </div>
@@ -108,14 +108,17 @@
           </ul>
         </div>
       </section>
-      <section class="section contacts">
+      <section class="section contacts-section">
         <div class="contacts">
           <div class="contacts__block">
             <div class="contacts__logo"><img class="logo" src="./assets/img/logo.svg" alt="media service"/></div>
             <div class="contacts__title">Контакты</div>
-            <address class="main-contacts main-contacts_accent"><a class="link tel" href="tel:+79261118544"><i class="icon icon_tel"></i>
-                +7(926) 111 85 44</a><a class="link" href="mailto:mediaserviceprojects@mail.ru"><i class="icon icon_mail"></i>
-                mediaserviceprojects@mail.ru</a><b>Наш адрес:</b>Москва, Проспект Мира 101 В стр. 2 офис 322</address>
+            <address class="main-contacts main-contacts_accent"><a class="main-contacts__tel link" href="tel:+79261118544"><i class="icon icon_tel"></i>
+                +7(926) 111 85 44</a><a class="main-contacts__tel link" href="tel:+79269180019"><i class="icon icon_tel"></i>
+                +7(926) 918 00 19</a><a class="main-contacts__mail link" href="mailto:mediaserviceprojects@mail.ru"><i class="icon icon_mail"></i>
+                mediaserviceprojects@mail.ru</a>
+              <div class="main-contacts__address"><b class="main-contacts__address-title">Наш адрес:</b>Москва, Проспект Мира 101 В стр. 2 офис 322</div>
+            </address>
           </div>
         </div>
         <div class="map"></div>
@@ -124,13 +127,13 @@
     <footer class="footer">
       <div class="footer-container container">
         <div class="row">
-          <div class="col-4"><a class="link" href="#"></a></div>
-          <div class="col-4">
+          <div class="footer__col col-4"><a class="link" href="#">Политика конфеденциальности</a></div>
+          <div class="footer__col col-4">
             <div class="copyright">Copyright 2019 Медиа Сервис<br/>Все права защищен</div>
           </div>
-          <div class="col-4">
+          <div class="footer__col col-4">
             Сайт разработан студией
-             <a class="link" href="#">IS ART</a>
+             <a class="footer__link link" href="#">IS ART</a>
           </div>
         </div>
       </div>

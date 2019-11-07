@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center; }
 
-.link, .our-clients__list {
+.link, .our-clients__list, .contacts {
   display: flex;
   align-items: center; }
 
@@ -235,12 +235,19 @@ h1 {
   display: flex;
   flex-direction: column;
   font-style: normal; }
-  .main-contacts .link {
-    justify-content: space-between; }
-    .main-contacts .link:not(:first-child) {
-      margin-top: 5px; }
+  .main-contacts .link:not(:first-child) {
+    margin-top: 5px; }
   .main-contacts .icon {
     margin-right: 10px; }
+  .main-contacts__tel {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px; }
+  .main-contacts__address {
+    margin-top: 10px;
+    line-height: 19px; }
+    .main-contacts__address-title {
+      display: block; }
 
 .list {
   list-style: none;
@@ -252,10 +259,6 @@ h1 {
   cursor: pointer; }
   .link_underlined {
     text-decoration: underline; }
-  .link_tel {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px; }
 
 .btn {
   height: 40px;
@@ -313,6 +316,9 @@ h1 {
 .header__left-side, .header__right-side {
   display: flex;
   align-items: center; }
+
+.header .main-contacts .link {
+  justify-content: space-between; }
 
 .nav {
   margin-left: 35px; }
@@ -442,6 +448,54 @@ button + address {
   font-weight: bold;
   font-size: 24px;
   line-height: 33px; }
+
+.contacts-section {
+  position: relative;
+  width: 100%;
+  height: 351px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0; }
+
+.contacts {
+  justify-content: flex-end;
+  position: absolute;
+  width: 390px;
+  height: 100%;
+  padding-right: 20px;
+  background: linear-gradient(90deg, #00C0FF 9.91%, #026687 100.04%), linear-gradient(90deg, #00D7CF 0.01%, #00C0FF 100.04%), linear-gradient(0deg, rgba(131, 222, 217, 0.9), rgba(131, 222, 217, 0.9)); }
+  .contacts * {
+    color: #00c0ff; }
+  .contacts__block {
+    width: 321px;
+    height: 313px;
+    padding: 25px 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px; }
+  .contacts__title {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    text-transform: uppercase; }
+  .contacts .main-contacts {
+    margin-top: 10px; }
+
+.map {
+  width: 100%;
+  height: 350px;
+  background: url(../assets/img/map--bg.jpg) no-repeat;
+  background-position: center right; }
+
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  .footer__col {
+    text-align: center;
+    line-height: 25px; }
+  .footer__link {
+    display: inline; }
 
 @media screen and (min-width: 1200px) {
   .subscription__input {
