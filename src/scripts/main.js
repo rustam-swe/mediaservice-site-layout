@@ -8,4 +8,15 @@ $(document).ready(function () {
   $('.portfolio-slider').slick({
     dots: false
   });
+
+  $('.our-clients__list').slick({
+    mobileFirst: true,
+    centerMode: true,
+    centerPadding: '40px',
+    slidesToShow: 1,
+    responsive: [{
+      breakpoint: 480,
+      settings: "unslick"
+    }]
+  });
 })

@@ -3,7 +3,7 @@ const browsersync = require("browser-sync").create();
 const gulpSass = require("gulp-sass");
 const gulpPug = require("gulp-pug");
 // const postcss = require('gulp-postcss');
-const sourcemaps = require('gulp-sourcemaps');
+// const sourcemaps = require('gulp-sourcemaps');
 const del = require("del");
 
 // BrowserSync
@@ -42,9 +42,9 @@ function pug() {
 function css() {
   return gulp
     .src("src/styles/*.css")
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     // .pipe(postcss(require('autoprefixer')))
-    .pipe(sourcemaps.write('.'))
+    // .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest("dist/css/"))
     .pipe(browsersync.stream());
 }
@@ -86,6 +86,6 @@ gulp.task("sass", sass);
 gulp.task("assets", assets);
 gulp.task("scripts", scripts);
 
-gulp.task("default", gulp.series(clean, pug, css, sass, scripts, assets));
+gulp.task("default", gulp.series(clean, pug, sass, css, scripts, assets));
 
 gulp.task("dev", gulp.parallel(watchFiles, browserSync));
