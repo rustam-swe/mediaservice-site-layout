@@ -2,7 +2,7 @@ const gulp = require("gulp");
 const browsersync = require("browser-sync").create();
 const gulpSass = require("gulp-sass");
 const gulpPug = require("gulp-pug");
-const postcss = require('gulp-postcss');
+// const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require("del");
 
@@ -43,7 +43,7 @@ function css() {
   return gulp
     .src("src/styles/*.css")
     .pipe(sourcemaps.init())
-    .pipe(postcss([require('precss'), require('autoprefixer')]))
+    // .pipe(postcss(require('autoprefixer')))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest("dist/css/"))
     .pipe(browsersync.stream());

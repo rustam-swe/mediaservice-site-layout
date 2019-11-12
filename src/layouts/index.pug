@@ -39,8 +39,34 @@ html(lang="ru")
     
     main.main
       section.section.banner
-        .banner Banner
+        .main-slider
+          article.main-slider__slide
+            .main-slider__container.container
+              .main-slider__info
+                header.main-slider__header.section__header
+                  h1.main-slider__title.section__title ПРОИЗВОДСТВО НАРУЖНОЙ РЕКЛАМЫ
+                  h3.main-slider__subtitle Вы не заплатите, если мы не успеем в срок!
+                
+                a.main-slider__btn.btn.btn_alt.link(href="#")
+                  span.main-slider__btn-txt бесплатная консультация
+                  i.icon.icon_arrow-right
+              
+              .main-slider__picture
+                img.main-slider__img(src="./assets/img/banner--slide.jpg", alt="")
 
+          article.main-slider__slide
+            .main-slider__container.container
+              .main-slider__info
+                header.main-slider__header.section__header
+                  h1.main-slider__title.section__title ПРОИЗВОДСТВО НАРУЖНОЙ РЕКЛАМЫ
+                  h3.main-slider__subtitle Вы не заплатите, если мы не успеем в срок!
+                
+                a.main-slider__btn.btn.btn_alt.link(href="#") бесплатная консультация
+                  i.icon.icon_arrow-right
+              
+              .main-slider__picture
+                img.main-slider__img(src="./assets/img/banner--slide.jpg", alt="")
+          
       section.section.our-clients
         .container
           ul.our-clients__list.list
@@ -58,11 +84,129 @@ html(lang="ru")
               img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
           
       section.section.info-graphics
-        header.section__header
-          h1.section__title Добро пожаловать в рекламно-производственную компанию Медиа Сервис. Компания основана в 2005 году.
+        .container
+          header.section__header
+            h1.section__title Добро пожаловать в рекламно-производственную компанию Медиа Сервис. Компания основана в 2005 году.
+          
+          p.info-graphics__paragraph Со дня открытия, мы реализовали:
 
-        .info-block Info-block
+          .info-block
 
+            ul.timeline.list
+              li.timeline__item
+
+                //- Номер таймлайна
+                .timeline__number 01 
+
+                //- Текст
+                .timeline__text.timeline__text_bottom более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.
+
+                //- График (кружок)
+                .timeline__graph.timeline__graph_top
+                  //- Стрелка кружочка
+                  .timeline__arrow.timeline__arrow_bottom
+                    i.icon.icon_chevron-bottom
+
+                  //- Внешняя окружность
+                  .timeline__circle-outer.timeline__circle
+                  
+                    //- Внутренняя окружность
+                    .timeline__circle-inner.timeline__circle
+                      .timeline__disc
+                        i.icon.icon_head
+              li.timeline__item
+                //- Левая стрелка 
+                .timeline__left-to-right-caret
+
+                //- Номер таймлайна
+                .timeline__number 02 
+
+                //- Текст
+                .timeline__text.timeline__text_top более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.
+
+                //- График (кружок)
+                .timeline__graph.timeline__graph_bottom
+                  //- Стрелка кружочка
+                  .timeline__arrow.timeline__arrow_top
+                    i.icon.icon_chevron-top
+
+                  //- Внешняя окружность
+                  .timeline__circle-outer.timeline__circle
+                  
+                    //- Внутренняя окружность
+                    .timeline__circle-inner.timeline__circle
+                      .timeline__disc
+                        i.icon.icon_human
+              li.timeline__item
+                //- Левая стрелка 
+                .timeline__left-to-right-caret
+                //- Номер таймлайна
+                .timeline__number 03
+
+                //- Текст
+                .timeline__text.timeline__text_bottom более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.
+
+                //- График (кружок)
+                .timeline__graph.timeline__graph_top
+                  //- Стрелка кружочка
+                  .timeline__arrow.timeline__arrow_bottom
+                    i.icon.icon_chevron-bottom
+
+                  //- Внешняя окружность
+                  .timeline__circle-outer.timeline__circle
+                  
+                    //- Внутренняя окружность
+                    .timeline__circle-inner.timeline__circle
+                      .timeline__disc
+                        i.icon.icon_graph
+              li.timeline__item
+                //- Левая стрелка 
+                .timeline__left-to-right-caret
+
+                //- Номер таймлайна
+                .timeline__number 04
+
+                //- Текст
+                .timeline__text.timeline__text_top более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.
+
+                //- График (кружок)
+                .timeline__graph.timeline__graph_bottom
+                  //- Стрелка кружочка
+                  .timeline__arrow.timeline__arrow_top
+                    i.icon.icon_chevron-top
+
+                  //- Внешняя окружность
+                  .timeline__circle-outer.timeline__circle
+                  
+                    //- Внутренняя окружность
+                    .timeline__circle-inner.timeline__circle
+                      .timeline__disc
+                        i.icon.icon_rub
+              li.timeline__item
+                //- Левая стрелка 
+                .timeline__left-to-right-caret
+
+                //- Номер таймлайна
+                .timeline__number 05
+
+                //- Текст
+                .timeline__text.timeline__text_bottom более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.
+
+                //- График (кружок)
+                .timeline__graph.timeline__graph_top
+                  //- Стрелка кружочка
+                  .timeline__arrow.timeline__arrow_bottom
+                    i.icon.icon_chevron-bottom
+
+                  //- Внешняя окружность
+                  .timeline__circle-outer.timeline__circle
+                  
+                    //- Внутренняя окружность
+                    .timeline__circle-inner.timeline__circle
+                      .timeline__disc
+                        i.icon.icon_smile
+              
+               
       section.section.contact-form
         .contact-form__container.container
           header.section__header  
@@ -85,8 +229,30 @@ html(lang="ru")
         header.section__header
           h1.section__title Портфолио
 
-        .slider.slider_portfolio Slider
-      
+        .portfolio-slider
+          .portfolio-slider__slide
+            .portfolio-slider__container.container
+              article.portfolio-slider__info
+                header.portfolio-slider__header
+                  h3.portfolio-slider__subtitle.content-subtitle Вывеска
+                  h1.portfolio-slider__title.content-title KIA motors
+                p.portfolio-slider__text более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.
+                
+                footer.portfolio-slider__footer
+                  button.portfolio-slider__btn.btn хочу так же!
+            img.portfolio-slider__img(src="./assets/img/portfolio--slide.jpg", alt="")
+          
+          .portfolio-slider__slide
+            .portfolio-slider__container.container
+              article.portfolio-slider__info
+                header.portfolio-slider__header
+                  h3.portfolio-slider__subtitle Вывеска
+                  h1.portfolio-slider__title KIA motors
+                p.portfolio-slider__text более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.более 500 проект по производству наружной рекламы, выставочных стендов, торгового оборудования и многого другого.
+                
+                footer.portfolio-slider__footer
+                  button.portfolio-slider__btn.btn хочу так же!
+            img.portfolio-slider__img(src="./assets/img/portfolio--slide.jpg", alt="")
       section.section.services
         header.section__header
           h1.section__title Наши услуги
@@ -123,7 +289,7 @@ html(lang="ru")
           .contacts__block
             .contacts__logo
               img.logo(src="./assets/img/logo.svg", alt="media service")
-            .contacts__title Контакты
+            .contacts__title.content-title Контакты
             address.main-contacts.main-contacts_accent
 
               a.main-contacts__tel.link(href="tel:+79261118544")
@@ -163,5 +329,7 @@ html(lang="ru")
 
 
            
-    //- script(src='/js/main.js')
+    script(src='./js/jquery-3.4.1.min.js')
+    script(src='./js/slick.min.js')
+    script(src='./js/main.js')
   
