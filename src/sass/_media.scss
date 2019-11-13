@@ -3,11 +3,11 @@
 @include mediaXl {}
 
 // max-width: 1199px
-@include mediaLg {}
-
-// Настольные
-// min-width: 992px
-@include mediaLg {}
+@include mediaLg {
+  .contact-form__container {
+    grid-template-rows: 75% 25%;
+  }
+}
 
 // max-width: 992px
 @include mediaMd {
@@ -119,6 +119,7 @@
     }
   }
 
+  // Секция Клиенты
   .our-clients {
     &__list {
       height: auto;
@@ -130,7 +131,23 @@
       padding-right: 10px;
     }
   }
+
+  // Секция Контактная форма
+  .contact-form__container {
+    grid-template-columns: auto;
+  }
+
+  .section__title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .tel_big {
+    font-size: 25px;
+    line-height: normal;
+  }
 }
+
 
 // Планшеты
 // max-width: 767px
@@ -166,6 +183,24 @@
     }
   }
 
+  .contact-form__container {
+    height: auto;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    grid-template-areas:
+      'header'
+      'phone'
+      'contact-form';
+  }
+
+  .tel_big {
+    justify-content: center;
+  }
+
+  .form-wrapper {
+    justify-self: center;
+  }
 }
 
 // max-width: 480px
@@ -200,5 +235,17 @@
     .slick-next {
       right: 10px;
     }
+  }
+
+  // Контактная форма
+  .contact-form {
+    padding-top: 30px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    background-size: cover;
   }
 }
