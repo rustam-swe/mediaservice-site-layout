@@ -7,6 +7,12 @@
   .contact-form__container {
     grid-template-rows: 75% 25%;
   }
+
+  .services {
+    &__grid {
+      grid-gap: 30px;
+    }
+  }
 }
 
 // max-width: 992px
@@ -40,7 +46,6 @@
     flex-grow: 0;
     // align-items: center
   }
-
 
   // Навигационное меню в шапке
   .nav {
@@ -146,6 +151,13 @@
     font-size: 25px;
     line-height: normal;
   }
+
+  .services {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 50px;
+    }
+  }
 }
 
 
@@ -201,6 +213,18 @@
   .form-wrapper {
     justify-self: center;
   }
+
+  .services {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__service {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 // max-width: 480px
@@ -247,5 +271,9 @@
     max-width: 300px;
     height: 400px;
     background-size: cover;
+  }
+
+  .services__service {
+    width: 100%;
   }
 }
