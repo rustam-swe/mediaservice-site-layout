@@ -337,19 +337,24 @@
 
 // Контакты и карта
 .contacts-section {
-  position: relative;
-  width: 100%; // 1362px;
+  // position: relative;
+  // width: 100%; // 1362px;
   height: 351px;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   padding: 0;
+  display: flex;
+}
+
+.contacts,
+.map {
+  flex-shrink: 0;
 }
 
 .contacts {
   @extend %flexCenterY;
   justify-content: flex-end;
-
-  position: absolute;
+  // position: absolute;
   width: 390px;
   height: 100%;
   padding-right: 20px;
@@ -381,5 +386,5 @@
   width: 100%;
   height: 350px;
   background: url(../assets/img/map--bg.jpg) no-repeat;
-  background-position: center right;
+  background-position: center;
 }

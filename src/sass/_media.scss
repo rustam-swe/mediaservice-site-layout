@@ -160,8 +160,6 @@
   }
 }
 
-
-// Планшеты
 // max-width: 767px
 @include mediaSm {
 
@@ -214,6 +212,7 @@
     justify-self: center;
   }
 
+  // Наши услуги
   .services {
     &__grid {
       grid-template-columns: 1fr;
@@ -224,6 +223,18 @@
       justify-content: center;
       align-items: center;
     }
+  }
+
+  // Контакты
+  .contacts-section {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .contacts {
+    width: 100%;
+    justify-content: center;
+    padding: 30px 0
   }
 }
 
@@ -273,6 +284,7 @@
     background-size: cover;
   }
 
+  // Наши услуги
   .services__service {
     width: 100%;
   }
