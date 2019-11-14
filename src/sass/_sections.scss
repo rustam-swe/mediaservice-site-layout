@@ -21,18 +21,15 @@
 // Main slider
 .banner {
   padding: 0;
+  background: $bg-gradient;
 }
 
 .main-slider {
-  background: $bg-gradient;
-
-  // &__slide {
-  //   height: 510px;
-  // }
+  bottom: -50px;
 
   &__container {
     display: flex;
-    height: 510px;
+    height: 460px; // 510px - 50px
   }
 
   &__info {
@@ -83,6 +80,7 @@
 
 // Наши клиенты
 .our-clients {
+  padding: 0;
   background: #F7F7F7;
 
   &__list {
@@ -220,6 +218,8 @@
 
 // Портфолио
 .portfolio {
+  padding-bottom: 0;
+
   .section__title {
     margin-bottom: 40px;
     text-align: center;

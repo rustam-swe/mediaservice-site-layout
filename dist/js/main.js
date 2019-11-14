@@ -1,5 +1,7 @@
+// Слайдер в начале страницы
+
 $(document).ready(function () {
-  // Слайдер в начале страницы
+  // Слайдер на главной
   $('.main-slider').slick({
     dots: false
   });
@@ -62,4 +64,16 @@ $(document).ready(function () {
   function noScroll() {
     window.scroll(0, 0);
   }
+
+  // Плавная прокрутка к секциям
+
+  const callbackBtn = document.querySelector('.call-back')
+
+  callbackBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    let targetSection = e.target.getAttribute('href');
+    document.querySelector(targetSection).scrollIntoView({
+      behavior: 'smooth'
+    })
+  })
 })
