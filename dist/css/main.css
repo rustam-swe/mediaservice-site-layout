@@ -606,6 +606,7 @@ button + address {
     width: 100%; }
 
 .our-clients {
+  padding: 0;
   background: #F7F7F7; }
   .our-clients__list {
     height: 240px; }
@@ -691,48 +692,49 @@ button + address {
   line-height: 14px;
   text-align: center; }
 
-.portfolio .section__title {
-  margin-bottom: 40px;
-  text-align: center; }
-
-.portfolio-slider {
-  max-width: 1362px;
-  margin-left: auto;
-  margin-right: auto; }
-  .portfolio-slider__slide {
-    position: relative; }
-  .portfolio-slider .slick-prev,
-  .portfolio-slider .slick-next {
-    border-color: #00c0ff; }
-  .portfolio-slider__container {
-    position: absolute; }
-  .portfolio-slider__img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover; }
-  .portfolio-slider__info {
-    width: 531px;
-    height: 287px;
-    padding: 20px 20px 15px 30px;
-    border-radius: 0 0 100px 0;
-    background: linear-gradient(90deg, rgba(0, 192, 255, 0.5) 9.91%, rgba(2, 102, 135, 0.5) 100.04%); }
-  .portfolio-slider__title {
-    color: #fff; }
-  .portfolio-slider__subtitle {
-    font-size: 18px;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 25px;
-    color: rgba(255, 255, 255, 0.52); }
-  .portfolio-slider__text {
-    margin-top: 10px;
-    color: #fff;
-    line-height: 19px; }
-  .portfolio-slider__footer {
-    margin-top: 30px; }
-  .portfolio-slider__btn {
-    width: 218px;
-    height: 40px; }
+.portfolio {
+  padding-bottom: 0; }
+  .portfolio .section__title {
+    margin-bottom: 40px;
+    text-align: center; }
+  .portfolio-slider {
+    max-width: 1362px;
+    margin-left: auto;
+    margin-right: auto; }
+    .portfolio-slider__slide {
+      position: relative; }
+    .portfolio-slider .slick-prev,
+    .portfolio-slider .slick-next {
+      border-color: #00c0ff; }
+    .portfolio-slider__container {
+      position: absolute; }
+    .portfolio-slider__img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover; }
+    .portfolio-slider__info {
+      width: 531px;
+      height: 287px;
+      padding: 20px 20px 15px 30px;
+      border-radius: 0 0 100px 0;
+      background: linear-gradient(90deg, rgba(0, 192, 255, 0.5) 9.91%, rgba(2, 102, 135, 0.5) 100.04%); }
+    .portfolio-slider__title {
+      color: #fff; }
+    .portfolio-slider__subtitle {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 25px;
+      color: rgba(255, 255, 255, 0.52); }
+    .portfolio-slider__text {
+      margin-top: 10px;
+      color: #fff;
+      line-height: 19px; }
+    .portfolio-slider__footer {
+      margin-top: 30px; }
+    .portfolio-slider__btn {
+      width: 218px;
+      height: 40px; }
 
 .services .section__title {
   margin-bottom: 40px;

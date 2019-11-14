@@ -83,6 +83,7 @@
 
 // Наши клиенты
 .our-clients {
+  padding: 0;
   background: #F7F7F7;
 
   &__list {
@@ -220,6 +221,8 @@
 
 // Портфолио
 .portfolio {
+  padding-bottom: 0;
+
   .section__title {
     margin-bottom: 40px;
     text-align: center;
