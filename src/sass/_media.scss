@@ -277,6 +277,20 @@
     justify-self: center;
   }
 
+  // Портфолио
+  .portfolio-slider {
+    &__container {
+      max-width: calc(100% - 80px)
+    }
+
+    &__info {
+      width: 100%;
+      height: auto
+    }
+  }
+
+
+
   // Наши услуги
   .services {
     &__grid {
@@ -387,6 +401,41 @@
     max-width: 300px;
     height: 400px;
     background-size: cover;
+  }
+
+  // Портфолио
+  .portfolio-slider {
+    &__btn {
+      width: auto;
+    }
+
+    // 3 точки на конце текста если текст большой
+    &__text {
+      overflow: hidden;
+      position: relative;
+      line-height: 1.2em;
+      max-height: 250px;
+      text-align: justify;
+      margin-right: -1em;
+      padding-right: 1em;
+
+      &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: white;
+      }
+    }
   }
 
   // Наши услуги

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.timeline__arrow, .timeline__arrow .icon::before, .timeline__arrow .icon::after {
+.timeline__arrow, .timeline__arrow .icon::before, .timeline__arrow .icon::after, .portfolio-slider__container {
   left: 50%;
   transform: translateX(-50%); }
 
@@ -644,17 +644,18 @@ button + address {
   max-width: 1362px;
   margin-left: auto;
   margin-right: auto; }
+  .portfolio-slider__slide {
+    position: relative; }
   .portfolio-slider .slick-prev,
   .portfolio-slider .slick-next {
     border-color: #00c0ff; }
   .portfolio-slider__container {
-    position: relative; }
+    position: absolute; }
   .portfolio-slider__img {
     width: 100%;
     height: 480px;
     object-fit: cover; }
   .portfolio-slider__info {
-    position: absolute;
     width: 531px;
     height: 287px;
     padding: 20px 20px 15px 30px;
@@ -689,6 +690,7 @@ button + address {
 
 .services__service {
   position: relative;
+  width: 100%;
   max-width: 360px;
   align-self: center;
   justify-self: center; }
@@ -749,8 +751,8 @@ button + address {
     margin-top: 10px; }
 
 .map {
-  width: 100%;
   height: 350px;
+  flex-grow: 1;
   background: url(../assets/img/map--bg.jpg) no-repeat;
   background-position: center; }
 
@@ -893,6 +895,11 @@ button + address {
     justify-content: center; }
   .form-wrapper {
     justify-self: center; }
+  .portfolio-slider__container {
+    max-width: calc(100% - 80px); }
+  .portfolio-slider__info {
+    width: 100%;
+    height: auto; }
   .services__grid {
     grid-template-columns: 1fr; }
   .services__service {
@@ -950,6 +957,29 @@ button + address {
     max-width: 300px;
     height: 400px;
     background-size: cover; }
+  .portfolio-slider__btn {
+    width: auto; }
+  .portfolio-slider__text {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 250px;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em; }
+    .portfolio-slider__text:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+    .portfolio-slider__text:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      background: white; }
   .services__service {
     width: 100%; }
   .footer__copyright {

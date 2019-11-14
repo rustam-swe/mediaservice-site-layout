@@ -230,13 +230,18 @@
     margin-left: auto;
     margin-right: auto;
 
+    &__slide {
+      position: relative;
+    }
+
     .slick-prev,
     .slick-next {
       border-color: $accent-color;
     }
 
     &__container {
-      position: relative
+      position: absolute;
+      @extend %positionCenterX;
     }
 
     &__img {
@@ -246,7 +251,7 @@
     }
 
     &__info {
-      position: absolute;
+      // position: absolute;
       width: 531px;
       height: 287px;
       padding: 20px 20px 15px 30px;
@@ -300,6 +305,7 @@
   &__service {
     // @extend %flexCenterXY;
     position: relative;
+    width: 100%;
     max-width: 360px;
     align-self: center;
     justify-self: center;
@@ -379,8 +385,9 @@
 }
 
 .map {
-  width: 100%;
+  // width: 100%;
   height: 350px;
+  flex-grow: 1;
   background: url(../assets/img/map--bg.jpg) no-repeat;
   background-position: center;
 }
