@@ -84,17 +84,20 @@ h1 {
   }
 }
 
-
-// Для шапки
 @mixin mediaMd {
   @media screen and (max-width: 992px) {
     @content;
   }
 }
 
-
 @mixin mediaSm {
   @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mediaMax-600 {
+  @media screen and (max-width: 600px) {
     @content;
   }
 }

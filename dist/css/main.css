@@ -151,12 +151,12 @@ h1 {
   outline: none; }
 
 .slick-prev {
-  left: 80px;
+  left: 30px;
   transform: translate(0, -50%) rotate(45deg);
   z-index: 3; }
 
 .slick-next {
-  right: 80px;
+  right: 30px;
   transform: translate(0, -50%) rotate(-135deg); }
 
 /* Dots */
@@ -764,6 +764,15 @@ button + address {
     display: inline; }
 
 @media screen and (max-width: 1199px) {
+  .main-slider__slide {
+    padding: 30px 0; }
+  .main-slider__container {
+    height: auto;
+    max-width: calc(100% - 80px); }
+  .main-slider .slick-prev {
+    left: 20px; }
+  .main-slider .slick-next {
+    right: 20px; }
   .contact-form__container {
     grid-template-rows: 75% 25%; }
   .services__grid {
@@ -823,6 +832,16 @@ button + address {
         transform: translateY(-12px); }
       .menu-btn__line:last-child {
         transform: translateY(12px); }
+  .main-slider__subtitle {
+    margin-top: 10px; }
+  .main-slider__btn {
+    height: auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px; }
+    .main-slider__btn-txt + .icon {
+      width: 25px;
+      margin-left: 15px; }
   .our-clients__list {
     height: auto; }
   .our-clients__client {
@@ -855,6 +874,15 @@ button + address {
     top: 50px; }
   .logo__img {
     width: 200px; }
+  .main-slider__title {
+    font-size: 18px;
+    line-height: normal; }
+  .main-slider__subtitle {
+    font-size: 14px; }
+  .main-slider__btn {
+    font-size: 14px; }
+    .main-slider__btn-txt + .icon {
+      width: 50px; }
   .contact-form__container {
     height: auto;
     grid-template-rows: auto;
@@ -877,7 +905,26 @@ button + address {
   .contacts {
     width: 100%;
     justify-content: center;
-    padding: 30px 0; } }
+    padding: 30px 0; }
+  .footer .link {
+    justify-content: center; }
+  .footer__copyright {
+    order: 3; }
+  .footer__developer {
+    order: 2; } }
+
+@media screen and (max-width: 600px) {
+  .main-slider__container {
+    flex-direction: column; }
+  .main-slider__info {
+    order: 2;
+    width: 100%;
+    margin-top: 15px; }
+  .main-slider__btn {
+    justify-content: space-around; }
+  .main-slider__picture {
+    order: 1;
+    margin: 0; } }
 
 @media screen and (max-width: 480px) {
   .nav__menu {
@@ -904,4 +951,8 @@ button + address {
     height: 400px;
     background-size: cover; }
   .services__service {
-    width: 100%; } }
+    width: 100%; }
+  .footer__copyright {
+    order: 2; }
+  .footer__developer {
+    order: 3; } }
