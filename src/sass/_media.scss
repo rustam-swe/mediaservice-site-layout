@@ -5,6 +5,87 @@
 // max-width: 1199px
 @include mediaLg {
 
+  .header {
+    &__container {
+      height: auto;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    &__contacts {
+      margin-top: 0;
+      padding-right: 30px
+    }
+  }
+
+  .logo {
+    order: 2;
+    margin-left: 30px
+  }
+
+  // Навигационное меню в шапке
+  .nav {
+    margin: 0;
+    align-items: flex-end;
+    order: 1;
+
+    &__container {
+      padding: 0;
+    }
+
+    &__menu {
+      width: 300px;
+      position: absolute;
+      height: 100%;
+      top: 80px;
+      display: none;
+      justify-content: flex-start;
+      flex-direction: column;
+      background: #fff;
+      // z-index: 3;
+
+      &.show {
+        display: flex;
+      }
+    }
+
+    &__item:not(:first-child) {
+      margin-left: 0;
+    }
+
+    &__link {
+      height: 50px;
+      padding-left: 20px;
+      font-size: 18px;
+      justify-content: flex-start;
+    }
+
+    &__dropdown {
+      display: none !important
+    }
+  }
+
+  // Кнопка меню
+  .menu-btn {
+    display: flex;
+    width: 80px;
+    height: 80px;
+
+    &__line {
+      width: 40px;
+      height: 3px;
+
+      &:first-child {
+        transform: translateY(-12px)
+      }
+
+      &:last-child {
+        transform: translateY(12px)
+      }
+    }
+  }
+
+
   // Слайдер в начале страницы
   .main-slider {
     &__slide {
@@ -61,16 +142,22 @@
       order: 2;
     }
 
-    &__contacts {
-      margin-top: 10px
-    }
+    // &__contacts {
+    //   margin-top: 10px
+    // }
   }
 
   .logo {
     flex-grow: 0;
-    // align-items: center
+    width: 200px;
   }
 
+  .header__contacts {
+    margin-left: 20px;
+  }
+
+
+  /*
   // Навигационное меню в шапке
   .nav {
     margin: 0;
@@ -146,7 +233,7 @@
         transform: translateY(12px)
       }
     }
-  }
+  }*/
 
   // Слайден в начале
 
@@ -209,8 +296,8 @@
 
   // Кнопка меню
   .menu-btn {
-    width: 50px;
-    height: 50px;
+    height: 60px;
+    width: 60px;
 
     &__line {
       width: 26px;
@@ -227,14 +314,16 @@
 
   .nav {
     &__menu {
-      top: 50px
+      top: 60px
     }
   }
 
   .logo {
-    &__img {
-      width: 200px
-    }
+    display: none;
+  }
+
+  .header__contacts .link:not(:first-child) {
+    margin-top: 0;
   }
 
   // Слайден в начале
@@ -335,6 +424,10 @@
 
 // max-width: 600px
 @include mediaMax-600 {
+  .call-back {
+    display: none;
+  }
+
   .main-slider {
     &__container {
       flex-direction: column
@@ -362,6 +455,18 @@
 
   .nav__menu {
     width: 100%;
+  }
+
+  .header__contacts {
+    padding-right: 15px;
+
+    .link {
+      justify-content: flex-start
+    }
+  }
+
+  .main-contacts__tel {
+    font-size: 20px;
   }
 
   // Клиенты

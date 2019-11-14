@@ -226,7 +226,8 @@ h1 {
   .main-contacts .link:not(:first-child) {
     margin-top: 5px; }
   .main-contacts .icon {
-    margin-right: 10px; }
+    margin-right: 10px;
+    flex-shrink: 0; }
   .main-contacts__tel {
     font-weight: 600;
     font-size: 24px;
@@ -492,14 +493,68 @@ h1 {
   display: flex;
   align-items: center; }
 
-.header .main-contacts .link {
+.header-contacts .link {
   justify-content: space-between; }
 
 .nav {
-  margin-left: 35px; }
+  margin-left: 35px;
+  z-index: 20; }
+  .nav__menu {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+  .nav__link_active, .nav__link:hover {
+    border: none;
+    background-color: #00c0ff;
+    color: #fff; }
 
 button + address {
   margin-left: 50px; }
+
+.menu-btn {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: #00c0ff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  cursor: pointer; }
+  .menu-btn__line {
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all .3s linear; }
+    .menu-btn__line:first-child {
+      transform: translateY(-6px); }
+    .menu-btn__line:last-child {
+      transform: translateY(6px); }
+
+.menu-btn.close .menu-btn__line:first-child {
+  transform: rotate(45deg); }
+
+.menu-btn.close .menu-btn__line:nth-child(2) {
+  visibility: hidden;
+  width: 0; }
+
+.menu-btn.close .menu-btn__line:last-child {
+  transform: rotate(-45deg); }
+
+.light-box {
+  display: none;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 10; }
+  .light-box.show {
+    display: initial; }
 
 .section {
   padding-top: 50px;
@@ -766,6 +821,53 @@ button + address {
     display: inline; }
 
 @media screen and (max-width: 1199px) {
+  .header__container {
+    height: auto;
+    max-width: 100%;
+    padding: 0; }
+  .header__contacts {
+    margin-top: 0;
+    padding-right: 30px; }
+  .logo {
+    order: 2;
+    margin-left: 30px; }
+  .nav {
+    margin: 0;
+    align-items: flex-end;
+    order: 1; }
+    .nav__container {
+      padding: 0; }
+    .nav__menu {
+      width: 300px;
+      position: absolute;
+      height: 100%;
+      top: 80px;
+      display: none;
+      justify-content: flex-start;
+      flex-direction: column;
+      background: #fff; }
+      .nav__menu.show {
+        display: flex; }
+    .nav__item:not(:first-child) {
+      margin-left: 0; }
+    .nav__link {
+      height: 50px;
+      padding-left: 20px;
+      font-size: 18px;
+      justify-content: flex-start; }
+    .nav__dropdown {
+      display: none !important; }
+  .menu-btn {
+    display: flex;
+    width: 80px;
+    height: 80px; }
+    .menu-btn__line {
+      width: 40px;
+      height: 3px; }
+      .menu-btn__line:first-child {
+        transform: translateY(-12px); }
+      .menu-btn__line:last-child {
+        transform: translateY(12px); }
   .main-slider__slide {
     padding: 30px 0; }
   .main-slider__container {
@@ -792,48 +894,88 @@ button + address {
     padding: 0 50px;
     flex-grow: 1;
     order: 2; }
-  .header__contacts {
-    margin-top: 10px; }
   .logo {
-    flex-grow: 0; }
+    flex-grow: 0;
+    width: 200px; }
+  .header__contacts {
+    margin-left: 20px; }
+  /*
+  // Навигационное меню в шапке
   .nav {
     margin: 0;
     align-items: flex-end;
-    order: 1; }
-    .nav__container {
-      padding: 0; }
-    .nav__menu {
+    order: 1;
+
+    &__container {
+      padding: 0;
+      // max-width: 100%;
+    }
+
+    &__menu {
       width: 300px;
       position: absolute;
+      // bottom: 8px;
       top: 80px;
       display: none;
       justify-content: space-between;
       flex-direction: column;
-      background: #fff; }
-      .nav__menu.show {
-        display: flex; }
-    .nav__item {
-      height: 50px; }
-    .nav__link {
+      background: #fff;
+      // z-index: 3;
+
+      &.show {
+        display: flex;
+      }
+    }
+
+    &__item {
+      height: 50px;
+
+      // &:first-child {
+      //   margin-top: 15px
+      // }
+
+      // &:last-child {
+      //   margin-bottom: 15px
+      // }
+
+    }
+
+    &__link {
       justify-content: flex-start;
-      padding-left: 20px; }
-      .nav__link_active, .nav__link:hover {
+      padding-left: 20px;
+
+      &_active,
+      &:hover {
         border: none;
-        background-color: #333;
-        color: #fff; }
-    .nav__dropdown {
-      display: none !important; }
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+
+    &__dropdown {
+      display: none !important
+    }
+  }
+
+  // Кнопка меню
   .menu-btn {
     display: flex;
     width: 80px;
-    height: 80px; }
-    .menu-btn__line {
+    height: 80px;
+
+    &__line {
       width: 40px;
-      height: 3px; }
-      .menu-btn__line:first-child {
-        transform: translateY(-12px); }
-      .menu-btn__line:last-child {
-        transform: translateY(12px); }
+      height: 3px;
+
+      &:first-child {
+        transform: translateY(-12px)
+      }
+
+      &:last-child {
+        transform: translateY(12px)
+      }
+    }
+  }*/
   .main-slider__subtitle {
     margin-top: 10px; }
   .main-slider__btn {
@@ -864,8 +1006,8 @@ button + address {
 
 @media screen and (max-width: 767px) {
   .menu-btn {
-    width: 50px;
-    height: 50px; }
+    height: 60px;
+    width: 60px; }
     .menu-btn__line {
       width: 26px; }
       .menu-btn__line:first-child {
@@ -873,9 +1015,11 @@ button + address {
       .menu-btn__line:last-child {
         transform: translateY(6px); }
   .nav__menu {
-    top: 50px; }
-  .logo__img {
-    width: 200px; }
+    top: 60px; }
+  .logo {
+    display: none; }
+  .header__contacts .link:not(:first-child) {
+    margin-top: 0; }
   .main-slider__title {
     font-size: 18px;
     line-height: normal; }
@@ -921,6 +1065,8 @@ button + address {
     order: 2; } }
 
 @media screen and (max-width: 600px) {
+  .call-back {
+    display: none; }
   .main-slider__container {
     flex-direction: column; }
   .main-slider__info {
@@ -936,6 +1082,12 @@ button + address {
 @media screen and (max-width: 480px) {
   .nav__menu {
     width: 100%; }
+  .header__contacts {
+    padding-right: 15px; }
+    .header__contacts .link {
+      justify-content: flex-start; }
+  .main-contacts__tel {
+    font-size: 20px; }
   .our-clients__list {
     height: auto; }
   .our-clients__client {
