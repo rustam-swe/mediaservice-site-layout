@@ -20,7 +20,7 @@
 
   .logo {
     order: 2;
-    margin-left: 30px
+    margin-left: 15px; //30px
   }
 
   // Навигационное меню в шапке
@@ -33,15 +33,29 @@
       padding: 0;
     }
 
-    &__menu {
-      width: 300px;
+    &__menu-container {
+      display: none;
       position: absolute;
-      height: 100%;
       top: 80px;
+      width: 300px;
+      height: 100vh; // 100%;
+      background: #fff;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    &__contacts {
+      visibility: hidden;
+    }
+
+    &__menu {
+      // position: absolute;
+      // top: 80px;
       display: none;
       justify-content: flex-start;
       flex-direction: column;
-      background: #fff;
       // z-index: 3;
 
       &.show {
@@ -58,10 +72,13 @@
       padding-left: 20px;
       font-size: 18px;
       justify-content: flex-start;
-    }
 
-    &__dropdown {
-      display: none !important
+      &_active,
+      &:hover {
+        border: none;
+        background-color: $accent-color;
+        color: #fff;
+      }
     }
   }
 
@@ -89,7 +106,7 @@
   // Слайдер в начале страницы
   .main-slider {
     &__slide {
-      padding: 30px 0
+      padding: 30px 0 60px
     }
 
     &__container {
@@ -154,6 +171,8 @@
   // Слайдер в начале
 
   .main-slider {
+    bottom: 0;
+
     &__subtitle {
       margin-top: 10px;
     }
@@ -211,6 +230,8 @@
 
   // Секция Клиенты
   .our-clients {
+    padding: 50px 0;
+
     &__list {
       height: auto;
     }
@@ -227,10 +248,20 @@
     grid-template-columns: auto;
   }
 
-  .section__title {
-    font-size: 25px;
-    line-height: 30px;
+  .section {
+    &__title {
+      // font-size: 25px;
+      // line-height: 30px;
+      font-size: 22px;
+      line-height: 20px;
+    }
+
+    &__subtitle {
+      margin-top: 15px;
+      font-size: 16px;
+    }
   }
+
 
   .tel_big {
     font-size: 25px;
@@ -267,17 +298,40 @@
   }
 
   .nav {
-    &__menu {
-      top: 60px
+    &__menu-container {
+      top: 60px;
+    }
+
+    &__contacts {
+      visibility: visible;
+
+      .call-back {
+        display: none;
+      }
+
     }
   }
 
-  .header .logo {
-    display: none;
+  // .header .logo {
+  //   display: none;
+  // }
+
+  .header {
+    &__right-side {
+      margin-right: 15px;
+
+      .header__contacts {
+        display: none;
+      }
+    }
   }
 
-  .header__contacts .link:not(:first-child) {
-    margin-top: 0;
+  // .header__contacts .link:not(:first-child) {
+  //   margin-top: 0;
+  // }
+
+  .main {
+    margin-top: 60px;
   }
 
   // Слайден в начале
@@ -340,7 +394,8 @@
   // Портфолио
   .portfolio-slider {
     &__container {
-      max-width: calc(100% - 80px)
+      width: 100%;
+      // max-width: calc(100% - 80px)
     }
 
     &__info {
@@ -393,13 +448,14 @@
 
 // max-width: 600px
 @include mediaMax-600 {
-  .call-back {
-    display: none;
-  }
+  // .call-back {
+  //   display: none;
+  // }
 
   .main-slider {
     &__container {
-      flex-direction: column
+      max-width: 100%;
+      flex-direction: column;
     }
 
     &__info {
@@ -409,30 +465,62 @@
     }
 
     &__btn {
+      padding: 10px;
       justify-content: space-around;
+    }
+
+    &__btn-txt+.icon {
+      width: 30px;
     }
 
     &__picture {
       order: 1;
       margin: 0
     }
+
+  }
+
+  .services__caption {
+    font-size: 16px;
   }
 }
 
 // max-width: 480px
 @include mediaXs {
 
-  .nav__menu {
-    width: 100%;
+  .nav {
+    &__menu {
+      width: 100%;
+    }
+
+    &__contacts {
+      .call-back {
+        display: flex;
+      }
+    }
   }
 
-  .header__contacts {
+  .logo {
+    margin: 0 auto;
+  }
+
+  .header {
+    &__left-side {
+      width: 100%;
+    }
+
+    &__right-side {
+      display: none;
+    }
+  }
+
+  /*.header__contacts {
     padding-right: 15px;
 
     .link {
       justify-content: flex-start
     }
-  }
+  }*/
 
   .main-contacts__tel {
     font-size: 20px;
@@ -485,36 +573,17 @@
 
   // Портфолио
   .portfolio-slider {
-    &__btn {
-      width: auto;
+    &__container {
+      padding: 0;
     }
 
-    // 3 точки на конце текста если текст большой
-    &__text {
-      overflow: hidden;
-      position: relative;
-      line-height: 1.2em;
-      max-height: 250px;
-      text-align: justify;
-      margin-right: -1em;
-      padding-right: 1em;
+    &__info {
+      padding: 15px;
+      border-radius: 0;
+    }
 
-      &:before {
-        content: '...';
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        right: 0;
-        width: 1em;
-        height: 1em;
-        margin-top: 0.2em;
-        background: white;
-      }
+    &__btn {
+      width: auto;
     }
   }
 
@@ -533,5 +602,9 @@
     &__developer {
       order: 3
     }
+  }
+
+  .modal-md {
+    max-width: 90% !important;
   }
 }

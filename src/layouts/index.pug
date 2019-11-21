@@ -7,6 +7,7 @@ html(lang="ru")
     title Медиасервис
     link(href='css/normalize.css', rel='stylesheet' type='text/css')
     link(href='css/bootstrap-grid.min.css', rel='stylesheet' type='text/css')
+    link(href='css/jquery.fancybox.min.css', rel='stylesheet' type='text/css')
     link(href='css/main.css', rel='stylesheet' type='text/css')
   body
     header.header
@@ -19,18 +20,34 @@ html(lang="ru")
               .menu-btn__line
               .menu-btn__line
               .menu-btn__line
-        
-            ul.nav__menu.list
-              li.nav__item
-                a.nav__link.link(href="#") О компании
-              li.nav__item
-                a.nav__link.link(href="#") Портфолио
-              li.nav__item
-                a.nav__link.link(href="#") Контакты
-              li.nav__item
-                a.nav__link.link(href="#") Услуги
+
+            .nav__menu-container
+              ul.nav__menu.list
+                li.nav__item
+                  a.nav__link.link(href="#about") О компании
+                li.nav__item
+                  a.nav__link.link(href="#portfolio") Портфолио
+                li.nav__item
+                  a.nav__link.link(href="#contacts") Контакты
+                li.nav__item
+                  a.nav__link.link(href="#services") Услуги
+              .nav__contacts
+                a.link.btn.call-back(href="#") заказать звонок
+                address.header__contacts.main-contacts
+
+                  a.main-contacts__tel.link(href="tel:+79261118544")
+                    i.icon.icon_tel
+                    |
+                    | +7(926) 111 85 44
+
+                  a.main-contacts__mail.link(href="mailto:mediaserviceprojects@mail.ru")
+                    i.icon.icon_mail
+                    |
+                    | mediaserviceprojects@mail.ru
+
+
         .header__right-side
-          a.link.btn.call-back(href="#contact-form") заказать звонок
+          a.link.btn.call-back(href="#") заказать звонок
           address.header__contacts.main-contacts
 
             a.main-contacts__tel.link(href="tel:+79261118544")
@@ -58,7 +75,8 @@ html(lang="ru")
                   i.icon.icon_arrow-right
               
               .main-slider__picture
-                img.main-slider__img(src="./assets/img/banner--slide.jpg", alt="")
+                a.main-slider__img(href="./assets/img/banner--slide.jpg" data-fancybox="main-slider")
+                  img.main-slider__img(src="./assets/img/banner--slide.jpg", alt="")
 
           article.main-slider__slide
             .main-slider__container.container
@@ -71,25 +89,32 @@ html(lang="ru")
                   i.icon.icon_arrow-right
               
               .main-slider__picture
-                img.main-slider__img(src="./assets/img/banner--slide.jpg", alt="")
+                a.main-slider__img(href="./assets/img/banner--slide.jpg" data-fancybox="main-slider")
+                  img.main-slider__img(src="./assets/img/banner--slide.jpg", alt="")
           
       section.section.our-clients
         .container
           ul.our-clients__list.list
             li.our-clients__client
-              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+              a.our-clients__thumb(href="./assets/img/client--kia.png" data-fancybox="our-clients")
+                img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
             li.our-clients__client
-              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+              a.our-clients__thumb(href="./assets/img/client--kia.png" data-fancybox="our-clients")
+                img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
             li.our-clients__client
-              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+              a.our-clients__thumb(href="./assets/img/client--kia.png" data-fancybox="our-clients")
+                img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
             li.our-clients__client
-              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+              a.our-clients__thumb(href="./assets/img/client--kia.png" data-fancybox="our-clients")
+                img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
             li.our-clients__client
-              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+              a.our-clients__thumb(href="./assets/img/client--kia.png" data-fancybox="our-clients")
+                img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
             li.our-clients__client
-              img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
+              a.our-clients__thumb(href="./assets/img/client--kia.png" data-fancybox="our-clients")
+                img.our-clients__thumb(src="./assets/img/client--kia.png", alt="")
           
-      section.section.info-graphics
+      section#about.section.info-graphics
         .container
           header.section__header
             h1.section__title Добро пожаловать в рекламно-производственную компанию Медиа Сервис. Компания основана в 2005 году.
@@ -217,7 +242,6 @@ html(lang="ru")
                       .timeline__disc
                         i.icon.icon_smile
               
-               
       section#contact-form.section.contact-form
         .contact-form__container.container
           header.section__header  
@@ -236,7 +260,7 @@ html(lang="ru")
               button.form__btn.btn(type="submit") Отправить заявку
               .form__disclaimer Нажав кнопку отправить вы даете согласие на обработку персональных данных
 
-      section.section.portfolio 
+      section#portfolio.section.portfolio 
         header.section__header
           h1.section__title Портфолио
 
@@ -265,38 +289,38 @@ html(lang="ru")
                   button.portfolio-slider__btn.btn хочу так же!
             img.portfolio-slider__img(src="./assets/img/portfolio--slide.jpg", alt="")
    
-      section.section.services
+      section#services.section.services
         header.section__header
           h1.section__title Наши услуги
 
         .services-container.container
           ul.services__grid.list
             li.services__service
-              .services__thumb
+              a.services__thumb(href="./assets/img/services--service-1.jpg" data-fancybox="services")
                 img.services__img(src="./assets/img/services--service-1.jpg", alt="")
               .services__caption Объемные буквы
             li.services__service
-              .services__thumb
+              a.services__thumb(href="./assets/img/services--service-2.jpg" data-fancybox="services")
                 img.services__img(src="./assets/img/services--service-2.jpg", alt="")
               .services__caption Бугущие строки
             li.services__service
-              .services__thumb
+              a.services__thumb(href="./assets/img/services--service-3.jpg" data-fancybox="services")
                 img.services__img(src="./assets/img/services--service-3.jpg", alt="")
               .services__caption Рекламные щиты
             li.services__service
-              .services__thumb
+              a.services__thumb(href="./assets/img/services--service-1.jpg" data-fancybox="services")
                 img.services__img(src="./assets/img/services--service-1.jpg", alt="")
               .services__caption Объемные буквы
             li.services__service
-              .services__thumb
+              a.services__thumb(href="./assets/img/services--service-2.jpg" data-fancybox="services")
                 img.services__img(src="./assets/img/services--service-2.jpg", alt="")
               .services__caption Бугущие строки
             li.services__service
-              .services__thumb
+              a.services__thumb(href="./assets/img/services--service-3.jpg" data-fancybox="services")
                 img.services__img(src="./assets/img/services--service-3.jpg", alt="")
               .services__caption Рекламные щиты
     
-      section.section.contacts-section
+      section#contacts.section.contacts-section
         .contacts
           .contacts__block
             .contacts__logo
@@ -339,9 +363,18 @@ html(lang="ru")
             | 
             a.footer__link.link(href="#") IS ART
     .light-box
-
+    //- Модальное окно
+    .dialog
+      .modal-md
+        .close
+        .modal-content
+          form.form.form__callback
+            input.form__input(type="text" placeholder='Введите свой номер тел.')
+            input.form__input(type="text" placeholder='Ваше имя')
+            button.form__btn.btn(type="submit") Заказать звонок
            
     script(src='./js/jquery-3.4.1.min.js')
     script(src='./js/slick.min.js')
+    script(src='./js/jquery.fancybox.min.js')
     script(src='./js/main.js')
   
