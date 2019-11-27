@@ -117,16 +117,6 @@
     background-image: url(../assets/img/icons/icon--arrow-right.svg);
   }
 
-  // Иконки таймлайна
-
-  &_chevron-top {
-    background-image: url(../assets/img/icons/icon--chevron-top.svg);
-  }
-
-  &_chevron-bottom {
-    background-image: url(../assets/img/icons/icon--chevron-bottom.svg);
-  }
-
   &_head {
     background-image: url(../assets/img/icons/icon--head.svg);
   }
@@ -183,7 +173,7 @@
 }
 
 // Таймлайн
-@mixin distanceToTimeline($placement, $distacne: 31px, $timelineItemHeight: 26px) {
+@mixin distanceToTimeline ($placement, $distacne: 31px, $timelineItemHeight: 26px) {
 
   /* Описание миксина
   // Рассчитывает расстояние от основной оси (стрелок) таймлайна до элемента и правильно расположит элемент
@@ -199,6 +189,33 @@
 
   @else if $placement==bottom {
     top: $timelineItemHeight + $distacne
+  }
+}
+
+// Иконки таймлайна
+@mixin chevronDirection ($direction: top) {
+  @if $direction==top {
+    background-image: url(../assets/img/icons/icon--chevron-top.svg);
+
+    &::before {
+      bottom: -30px;
+    }
+
+    &::after {
+      bottom: -15px;
+    }
+  }
+
+  @else if $direction==bottom {
+    background-image: url(../assets/img/icons/icon--chevron-bottom.svg);
+
+    &::before {
+      top: -30px;
+    }
+
+    &::after {
+      top: -15px;
+    }
   }
 }
 
@@ -256,14 +273,8 @@
         &__arrow {
           bottom: -49px;
 
-          .icon {
-            &::before {
-              top: -30px;
-            }
-
-            &::after {
-              top: -15px;
-            }
+          .icon_chevron {
+            @include chevronDirection(bottom);
           }
         }
       }
@@ -282,14 +293,8 @@
         &__arrow {
           top: -45px;
 
-          .icon {
-            &::before {
-              bottom: -30px;
-            }
-
-            &::after {
-              bottom: -15px;
-            }
+          .icon_chevron {
+            @include chevronDirection(top);
           }
         }
 
