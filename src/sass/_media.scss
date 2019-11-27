@@ -135,6 +135,15 @@
       grid-gap: 30px;
     }
   }
+
+  // Контакты
+  .contacts {
+    width: 37%;
+  }
+
+  .map {
+    @include calcMapWidth(37%);
+  }
 }
 
 // max-width: 992px
@@ -273,6 +282,15 @@
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 50px;
     }
+  }
+
+  // Контакты
+  .contacts {
+    width: 45%;
+  }
+
+  .map {
+    @include calcMapWidth(45%);
   }
 }
 
@@ -427,6 +445,10 @@
     width: 100%;
     justify-content: center;
     padding: 30px 0
+  }
+
+  .map {
+    width: 100%;
   }
 
   // Подвал

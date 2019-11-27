@@ -52,6 +52,10 @@
   &_underlined {
     text-decoration: underline;
   }
+
+  &:not(.btn):not(.logo):hover {
+    text-decoration: underline
+  }
 }
 
 .btn {
@@ -72,6 +76,15 @@
   &_alt {
     background: #fff;
     color: $accent-color;
+
+    &:hover {
+      background: $hover-gradient;
+      color: #fff;
+    }
+  }
+
+  &:not(.btn_alt):hover {
+    background: $hover-gradient;
   }
 }
 
@@ -170,6 +183,24 @@
 }
 
 // Таймлайн
+@mixin distanceToTimeline($placement, $distacne: 31px, $timelineItemHeight: 26px) {
+
+  /* Описание миксина
+  // Рассчитывает расстояние от основной оси (стрелок) таймлайна до элемента и правильно расположит элемент
+  // Элементы: текстовый блок, графический (круги) блок
+  // Принимаемые параметры:
+  // 1. расположение блока (объязательно)
+  // 2. расстояние от основной оси (стрелок) таймлайна до элемента (опционально)
+  // 3. высота оснойной оси (стрелок таймлайна) (опционально)
+  */
+  @if $placement==top {
+    bottom: $timelineItemHeight + $distacne
+  }
+
+  @else if $placement==bottom {
+    top: $timelineItemHeight + $distacne
+  }
+}
 
 .timeline {
   display: flex;
@@ -191,10 +222,13 @@
     height: 26px;
     width: 20%;
 
-
     &:first-child {
       .timeline__core {
         border-radius: 50px 0 0 50px;
+      }
+
+      .timeline__left-to-right-caret {
+        display: none;
       }
     }
 
@@ -208,6 +242,60 @@
         }
       }
     }
+
+    &:nth-child(odd) {
+      .timeline {
+        &__text {
+          @include distanceToTimeline(bottom)
+        }
+
+        &__graph {
+          @include distanceToTimeline(top, 55px)
+        }
+
+        &__arrow {
+          bottom: -49px;
+
+          .icon {
+            &::before {
+              top: -30px;
+            }
+
+            &::after {
+              top: -15px;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      .timeline {
+        &__text {
+          @include distanceToTimeline(top)
+        }
+
+        &__graph {
+          @include distanceToTimeline(bottom, 55px)
+        }
+
+        &__arrow {
+          top: -45px;
+
+          .icon {
+            &::before {
+              bottom: -30px;
+            }
+
+            &::after {
+              bottom: -15px;
+            }
+          }
+        }
+
+      }
+    }
+
   }
 
   &__core {
@@ -264,46 +352,9 @@
     position: absolute;
   }
 
-  @mixin distanceToTimeline($placement, $distacne: 31px, $timelineItemHeight: 26px) {
-
-    /* Описание миксина
-    // Рассчитывает расстояние от основной оси (стрелок) таймлайна до элемента и правильно расположит элемент
-    // Элементы: текстовый блок, графический (круги) блок
-    // Принимаемые параметры:
-    // 1. расположение блока (объязательно)
-    // 2. расстояние от основной оси (стрелок) таймлайна до элемента (опционально)
-    // 3. высота оснойной оси (стрелок таймлайна) (опционально)
-    */
-    @if $placement==top {
-      bottom: $timelineItemHeight + $distacne
-    }
-
-    @else if $placement==bottom {
-      top: $timelineItemHeight + $distacne
-    }
-  }
-
   &__text {
     text-align: center;
     word-break: break-word;
-
-    &_top {
-      @include distanceToTimeline(top)
-    }
-
-    &_bottom {
-      @include distanceToTimeline(bottom)
-    }
-  }
-
-  &__graph {
-    &_top {
-      @include distanceToTimeline(top, 55px)
-    }
-
-    &_bottom {
-      @include distanceToTimeline(bottom, 55px)
-    }
   }
 
   &__circle,
@@ -343,35 +394,6 @@
   &__arrow {
     @extend %positionCenterX;
     position: absolute;
-
-
-    &_top {
-      top: -45px;
-
-      .icon {
-        &::before {
-          bottom: -30px;
-        }
-
-        &::after {
-          bottom: -15px;
-        }
-      }
-    }
-
-    &_bottom {
-      bottom: -49px;
-
-      .icon {
-        &::before {
-          top: -30px;
-        }
-
-        &::after {
-          top: -15px;
-        }
-      }
-    }
 
     .icon {
       position: relative;

@@ -20,12 +20,6 @@
   }
 }
 
-.contacts-section {
-  max-width: 1360px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 // Specific blocks
 
 // Main slider
@@ -117,7 +111,7 @@
         button {
           background: rgba(0, 0, 0, .4);
 
-          &:hover{
+          &:hover {
             background: rgba(0, 0, 0, .8);
           }
         }
@@ -171,7 +165,6 @@
     margin-top: 30px;
   }
 }
-
 
 // Секция с контактнами
 .contact-form {
@@ -275,6 +268,10 @@
     .slick-prev,
     .slick-next {
       border-color: $accent-color;
+
+      &:hover {
+        border-color: $secondary-color;
+      }
     }
 
     &__container {
@@ -348,6 +345,16 @@
     max-width: 360px;
     align-self: center;
     justify-self: center;
+
+    &:hover .services__caption {
+      left: 22px;
+      bottom: 18px;
+    }
+
+    &:hover img {
+      top: 0;
+      left: 0;
+    }
   }
 
   &__thumb {
@@ -368,6 +375,7 @@
     height: 100%;
     border: 3px solid $secondary-color;
     object-fit: cover;
+    transition: 0.3s ease;
   }
 
   &__caption {
@@ -378,10 +386,15 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 33px;
+    transition: 0.3s ease;
   }
 }
 
 // Контакты и карта
+@mixin calcMapWidth ($contactsWidth: 30%) {
+  width: 100% - $contactsWidth
+}
+
 .contacts {
   &-section {
     height: 351px;
@@ -399,7 +412,7 @@
   @extend %flexCenterY;
   justify-content: flex-end;
   // position: absolute;
-  width: 390px;
+  width: 30%; // 390px;
   height: 100%;
   padding-right: 20px;
   background: linear-gradient(90deg, #00C0FF 9.91%, #026687 100.04%), linear-gradient(90deg, #00D7CF 0.01%, #00C0FF 100.04%), linear-gradient(0deg, rgba(131, 222, 217, 0.9), rgba(131, 222, 217, 0.9));
@@ -427,9 +440,10 @@
 }
 
 .map {
-  // width: 100%;
+  // width: 60%;
+  @include calcMapWidth(30%);
   height: 350px;
   flex-grow: 1;
-  background: url(../assets/img/map--bg.jpg) no-repeat;
-  background-position: center;
+  background: url(../assets/img/map--bg.jpg) no-repeat center;
+  background-size: cover;
 }
