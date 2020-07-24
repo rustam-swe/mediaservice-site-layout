@@ -24,16 +24,30 @@ $(document).ready(function () {
   });
 
   $('.our-clients__list').slick({
-    mobileFirst: true,
-    centerMode: true,
-    centerPadding: '40px',
-    slidesToShow: 1,
-    dots: true,
+    // mobileFirst: true,
+    autoplay: true,
+    slidesToShow: 6,
+    dots: false,
     arrows: false,
     responsive: [{
+      breakpoint: 991,
+      settings: {
+        // centerMode: true,
+        // centerPadding: '40px',
+        slidesToShow: 4,
+        // dots: true,
+        // arrows: false,
+      }
+    },
+    {
       breakpoint: 480,
-      settings: "unslick"
-    }]
+      settings: {
+        slidesToShow: 1,
+        dots: true,
+        arrows: false,
+      }
+    },
+    ]
   });
 
   // Меню бургер

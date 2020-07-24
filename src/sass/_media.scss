@@ -241,12 +241,12 @@
   .our-clients {
     padding: 50px 0;
 
-    &__list {
-      height: auto;
-    }
+    // &__list {
+    //   height: auto;
+    // }
 
     &__client {
-      height: 50px;
+      // height: 50px;
       padding-left: 10px;
       padding-right: 10px;
     }
@@ -572,6 +572,10 @@
 
     .slick-next {
       right: 10px;
+    }
+
+    &__thumb {
+      height: 90px;
     }
   }
 
